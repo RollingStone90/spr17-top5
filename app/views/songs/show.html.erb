@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Songs</h1>
+<p><%= link_to new_song_path do %>
+  <span class="glyphicon glyphicon-plus"></span> Add
+  <% end %>
+</p>
+
+<div class="well">
+	<p>
+	  <strong>Name:</strong>
+	  <%= @song.name %>
+	</p>
+
+	<p>
+	  <strong>Rating:</strong>
+	  <%= @song.rating %>
+	</p>
+
+	<p>
+	  <strong>Artist:</strong>
+	  <%= @song.artist.name %>
+	</p>
+
+	<h4><%= link_to edit_song_path(@song) do %>
+            <span class="glyphicon glyphicon-pencil">Edit</span>
+          <% end %> |  
+          <%= link_to @song, method: :delete, data: { confirm: 'Are you sure?' } do %>
+             <span class="glyphicon glyphicon-trash">Delete</span>
+          <% end %>
+          </h4>   
+
+<!-- This takes the html code in our "video" field and renders the actual video -->
+<%= @song.video.html_safe %>
+
+</div>

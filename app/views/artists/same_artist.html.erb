@@ -1,0 +1,18 @@
+<h2>Add a new song </h2>
+
+<div class="well">
+
+	<%= form_for Song.new, url: {action: "artist_song"} do |f| %>  
+	<div class="form-group">
+	  <%= f.text_field :name, class: 'form-control', placeholder: "Enter song name" %>
+	
+        <%= f.select :rating, ["1","2","3","4","5","6","7","8","9","10"], 
+         {:include_blank => 'Rating'}, class: "form-control" %>
+         
+
+	  <%= f.hidden_field :artist_id, value: params[:id] %>
+	  <%= f.submit "Create Song", class: 'btn btn-primary' %>
+	<% end %>
+
+</div>
+

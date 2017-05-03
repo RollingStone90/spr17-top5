@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p><%= link_to new_artist_path do %>
+  <span class="glyphicon glyphicon-plus"></span> Add
+  <% end %>
+</p>
+
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="well">
+      <h1><%= @artist.name %></h1>
+      <p><%= image_tag @artist.avatar.thumb %></p>
+
+      <h4><p>
+            <% @artist.rating.to_i.times do %>
+             <span class="glyphicon glyphicon-star"></span>
+            <% end %>
+          </p></h4>
+
+	<% @artist.songs.each do |song| %>
+	  <h3><%= link_to song.name, song %></a></h3>
+	<% end %>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
+
+
+
+<h2> Add a song by <%= link_to @artist.name, same_artist_path(id: @artist.id) %></h2>

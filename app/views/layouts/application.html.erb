@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spr17Top5</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Cookie|Orbitron" rel="stylesheet">
+</head>
+<body>
+<div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+
+              <h3 class="masthead-brand">Heather's Top 5</h3>
+              <nav>
+              
+	                <ul class="nav masthead-nav">
+	                  <li><%= link_to "Top 5 Songs", root_path %></li>
+	                  <li><%= link_to "Top 5 Artists", top5artists_path %></li>
+	                  <li><%= link_to "Artists", artists_path %></li>
+	                  <li><%= link_to "Songs", songs_path%></li>
+	                </ul>
+               
+              </nav>
+            </div>
+          </div>
+          
+
+          <div class="inner-cover" >
+						<%= yield %>
+					</div>
+
+		        <div class="mastfoot">
+            <div class="inner">
+              <h5>footer needs some help </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+</body>
+</html>
